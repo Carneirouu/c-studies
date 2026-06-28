@@ -3,11 +3,9 @@
 
 void aureaProportion(int a, int b)
 {
-    float d;
-
     if (b != 0)
     {
-        d = (float)a / b;
+        float d = (float)a / b;
         printf("%.5f\n", d);
     }
     else
@@ -26,7 +24,7 @@ int main()
     {
         printf("%d   ", f);
         c2 = c1 + f;
-        aureaProportion(c1, f); // Execute the aurea block. 
+        aureaProportion(c1, f); // Execute the aurea block.
         c1 = f;
         f = c2;
     }
