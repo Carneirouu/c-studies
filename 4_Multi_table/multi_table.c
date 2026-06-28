@@ -1,3 +1,4 @@
+// Show the multiplication table of some number.
 #include <stdio.h>
 
 int main()
@@ -5,11 +6,11 @@ int main()
     int i = 0, n, r;
 
     printf("Quer ver a tabuada de qual valor?:\n");
-    scanf("%d", &n);
+    scanf("%d", &n);    // Choose a number to display its multiplication table.
 
-    do
+    do  // Repete the block while i <= 10
     {
-        i++;
+        i++;    // Add 1 to the multiplier.
         r = i * n;
         if (i != 11)
         {
