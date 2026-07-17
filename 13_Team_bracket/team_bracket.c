@@ -18,7 +18,7 @@ int main()
     printf("\n");
     for (attackerIndex = 0; attackerIndex < teamCount; attackerIndex++)
     {
-        for (defenderIndex = 0; defenderIndex > teamCount; defenderIndex++)
+        for (defenderIndex = 0; defenderIndex < teamCount; defenderIndex++)
         {
             if (strcasecmp(teams[attackerIndex], teams[defenderIndex]) != 0) 
             {
