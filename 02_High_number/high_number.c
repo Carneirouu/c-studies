@@ -1,21 +1,38 @@
-// Ao digitar valores distintos ou iguais o programa deve devolver o maior dentre eles.
-
 #include <stdio.h>
+#include <limits.h>
+
 int main()
 {
-    int i, maior, valor; // Três váriaveis declaradas i, maior e valor, todas inteiras.
 
-    printf("Digite 5 numeros\n"); // Solicita ao usuario os valores.
+    double indexLoop = 0, maior = INT_MIN, value, logicalTest = 0, spinIndex = 10;
 
-    for (i = 1; i <= 5; i++) // Estrutura de repetição que fara um loop no programa enquanto i for < 5.
+    for (indexLoop = 0; indexLoop < spinIndex; indexLoop++)
     {
-        scanf("%d", &valor); // Lê o digito que o usuario inseriu.
-        if (valor > maior)   // Estrutura de checagem, se o próximo valor a ser digitado for maior que o maior valor digitado ele assume a posição de maior valor.
+        printf("Digite um numero: ");
+        logicalTest = 0;
+        while (logicalTest == 0)
         {
-            maior = valor;
+
+            if (scanf("%lf", &value) == 1)
+            {
+                if (value > maior)
+                {
+                    maior = value;
+                }
+                logicalTest = 1;
+            }
+            else
+            {
+                printf("ERRO! ");
+                scanf("%lf", &value);
+                logicalTest = 1;
+                while (getchar() != '\n')
+                {
+                }
+                spinIndex++;
+            }
         }
     }
-
-    printf("O maior numero da lista e: %d\n", maior); // Devolve o resultado, no caso, o maio valor digitado.
+    printf("\nO maior valor da lista e: %.2f", maior);
     return 0;
 }

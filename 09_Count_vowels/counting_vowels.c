@@ -3,7 +3,7 @@
 
 int main()
 {
-    char word[31], vowels[] = "aeiou";
+    char word[31], vowels[] = "aeiouAEIOU";
     int vowelCounter = 0, vowelIndex, charIndex;
 
     printf("Type a word: ");
@@ -13,7 +13,7 @@ int main()
 
     for (charIndex = 0; charIndex < length; charIndex++)
     {
-        for (vowelIndex = 0; vowelIndex < 5; vowelIndex++)
+        for (vowelIndex = 0; vowelIndex < 10; vowelIndex++)
         {
             if (word[charIndex] == vowels[vowelIndex])
             {
