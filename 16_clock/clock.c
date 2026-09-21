@@ -9,9 +9,9 @@ int main()
     {
         for (h = 0; h < 25; h++)
         {
-            for (m = 0; m < 61; m++)
+            for (m = 0; m < 60; m++)
             {
-                for (s = 0; s < 61; s++)
+                for (s = 0; s < 60; s++)
                 {
                     printf("%d:%d:%d\n", h, m, s);
                     Sleep(1000);
