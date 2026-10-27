@@ -1,7 +1,3 @@
-// Matheus André Bégio Carneiro
-// RA:2760482611015
-// Exercício P1
-
 #include <stdio.h>
 
 int main()
