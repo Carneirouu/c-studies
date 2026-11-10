@@ -47,8 +47,7 @@ void subMatriz(unsigned int rows, unsigned int cols, unsigned int matriz[rows][c
 
 int main()
 {
-    unsigned int i, j, indice0, indice1, k, indice0_2, indice1_2;
-    int mul = 0;
+    unsigned int i, j, indice0, indice1, indice2, k;
 
     printf("Numero de linhas: ");
     scanf("%u", &i);
@@ -96,32 +95,43 @@ int main()
         subMatriz(i, j, matriz, matriz2);
         break;
     case 3:
-        for (indice1 = 0; indice1 < i; indice1++)
+
+        imprimirMatriz(i, j, matriz);
+
+        imprimirMatriz(i, j, matriz2);
+        
+        if (i == j)
         {
-            for (indice0 = 0; indice0 < j; indice0++)
+            unsigned int resultado[i][j];
+
+            for (indice1 = 0; indice1 < i; indice1++)
             {
-                for (indice1_2 = 0; indice1_2 < i; indice1_2++)
+                for (indice0 = 0; indice0 < j; indice0++)
                 {
-                    for (indice0_2 = 0; indice0_2 < i; indice0_2++)
+                    resultado[indice1][indice0] = 0;
+
+                    for (indice2 = 0; indice2 < j; indice2++)
                     {
-                        mul = matriz[indice1][indice0] * matriz2[indice1_2][indice0_2];
-                        mul += mul;
-                        printf("%d ", mul);
+                        resultado[indice1][indice0] += matriz[indice1][indice2] * matriz2[indice2][indice0];
                     }
                 }
             }
-            printf("\n");
-        }
-        for (indice1_2 = 0; indice1_2 < i; indice1_2++)
-        {
-            for (indice0_2 = 0; indice0_2 < i; indice0_2++)
+            printf("\nResultado da Multiplicacao:\n");
+            for (indice1 = 0; indice1 < i; indice1++)
             {
+                for (indice0 = 0; indice0 < j; indice0++)
+                {
+                    printf("%u\t", resultado[indice1][indice0]);
+                }
+                printf("\n");
             }
+            break;
         }
-        mul = matriz[indice1][indice0] * matriz2[indice1_2][indice0_2];
-        mul += mul;
-        printf("%d ", mul);
-        break;
+        else
+        {
+            printf("Não é possível realizar a operação de multiplicação.");
+            break;
+        }
     case 4:
         imprimirMatriz(i, j, matriz);
 
